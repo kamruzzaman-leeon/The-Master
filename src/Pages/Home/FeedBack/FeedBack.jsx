@@ -2,13 +2,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
 const FeedBack = () => {
-    const reviews=[
+    const reviews = [
         {
             "_id": "643010e0f5a7e52ce1e8fa65",
             "name": "Jane Doe",
-            "title":"AWS Certified Cloud Practitioner", 
+            "title": "AWS Certified Cloud Practitioner",
             "details": "I am proud to say that after a few months of taking this course...I passed my exam and am now an AWS Certified Cloud Practitioner! This content was exactly what the CCP exam covered.",
             "rating": 3
         },
@@ -39,21 +40,29 @@ const FeedBack = () => {
     ]
     return (
         <div className='my-20'>
-            <h2 className='text-center font-semibold text-4xl py-8'>From the community</h2>
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <h2 className='text-center font-bold text-4xl py-8'>Why Students Love <span className='text-blue-600'>The Master</span></h2>
+            <p className='font-bold text-xl text-center text-slate-600'>Whether it's a first brush on canvas or the last frame in an animation, Skillshare is here to support you on every step of your creative journey.</p>
+            <Swiper
+                pagination={{
+                dynamicBullets: true,
+                clickable: true,
+                }} 
+                navigation={true}
+                slidesPerView={'auto'}
+                modules={[Navigation, Pagination]} className="mySwiper">
                 {
                     reviews?.map(review => <SwiperSlide key={review._id}>
                         <div className='m-10 flex flex-col items-center'>
-                        <h3 className='text-2xl text-center font-bold'>{review.title}</h3>
-                            <p className='py-8 italic w-10/12 text-center'>{`"${review.details}"`}</p>                            
+                            <h3 className='text-2xl text-center font-bold'>{review.title}</h3>
+                            <p className='py-8 italic w-10/12 text-center'>{`"${review.details}"`}</p>
                             <div className="avatar">
                                 <div className="w-12 rounded">
                                     <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                 </div>
                             </div>
                             <h3 className=' text-2xl text-center'>{review.name}</h3>
-                            
-                            
+
+
 
                         </div>
                     </SwiperSlide>)
