@@ -1,6 +1,7 @@
 import Banner from "../Banner/Banner";
 import CountDown from "../CountDown/CountDown";
 import FeedBack from "../FeedBack/FeedBack";
+import JoinTeacher from "../JoinTeacher/JoinTeacher";
 import Partners from "../Partners/Partners";
 import { Helmet } from "react-helmet";
 
@@ -18,6 +19,7 @@ const Home = () => {
             <Partners></Partners>
             <FeedBack></FeedBack>
             <CountDown></CountDown>
+            <JoinTeacher></JoinTeacher>
         </div>
     );
 };

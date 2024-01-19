@@ -38,20 +38,22 @@ const FeedBack = () => {
         }
     ]
     return (
-        <div>
-            <h2 className='text-center font-semibold text-4xl pt-8'>From the community</h2>
+        <div className='my-20'>
+            <h2 className='text-center font-semibold text-4xl py-8'>From the community</h2>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
                     reviews?.map(review => <SwiperSlide key={review._id}>
-                        <div className='m-14 flex flex-col items-center'>
+                        <div className='m-10 flex flex-col items-center'>
+                        <h3 className='text-2xl text-center font-bold'>{review.title}</h3>
+                            <p className='py-8 italic w-10/12 text-center'>{`"${review.details}"`}</p>                            
                             <div className="avatar">
-                                <div className="w-36 rounded">
+                                <div className="w-12 rounded">
                                     <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                 </div>
                             </div>
                             <h3 className=' text-2xl text-center'>{review.name}</h3>
-                            <h3 className='text-2xl text-center font-bold'>{review.title}</h3>
-                            <p className='py-8 italic'>{`"${review.details}"`}</p>
+                            
+                            
 
                         </div>
                     </SwiperSlide>)

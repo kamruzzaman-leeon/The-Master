@@ -3,7 +3,7 @@ import countchart from '../../../assets/Home/CountDown/countchart.json';
 import CountUp from 'react-countup';
 const CountDown = () => {
     return (
-        <div className="flex flex-col px-5 lg:flex-row pb-5 bg-slate-50">
+        <div className="flex flex-col px-5 lg:flex-row py-5 bg-slate-50 my-20">
             <div className="flex-1 flex flex-col content-center justify-center">
                 <div className="grid grid-cols-2 grid-rows-3">
                     <div className="bg-slate-700 rounded-sm p-10">
