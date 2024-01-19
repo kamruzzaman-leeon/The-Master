@@ -9,7 +9,7 @@ import adobe from '../../../assets/Home/Partners/icons8-adobe.svg'
  import samsung from '../../../assets/Home/Partners/icons8-samsung.svg'
  import umich from '../../../assets/Home/Partners/umich.png'
  import stanford from '../../../assets/Home/Partners/stanford.png'
- import duke from '../../../assets/Home/Partners/duke.png'
+//  import duke from '../../../assets/Home/Partners/duke.png'
 
 const Partners = () => {
     return (
