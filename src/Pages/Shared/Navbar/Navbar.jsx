@@ -43,7 +43,7 @@ const Navbar = () => {
       </div> 
       <div className="flex-1 px-2 mx-2">
         <img src={logo} className="w-8 mr-2" alt="logo" />
-        <h2 className="font-extrabold font-serif text-blue-600 text-3xl ">The Master</h2></div>
+        <h2 className="font-extrabold text-blue-600 text-3xl ">The Master</h2></div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}

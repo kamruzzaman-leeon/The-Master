@@ -5,21 +5,21 @@ const Footer = () => {
             <div className="footer p-10 bg-slate-800 text-white ">
 
   <nav>
-    {/* <header className="footer-title">The Master</header>  */}
+    <header className="footer-title">The Master</header> 
     <a className="link link-hover">The Master Bussiness</a>
     <a className="link link-hover">Tech on Th Master</a>
     <a className="link link-hover">Get the app</a>
     <a className="link link-hover">Donate use!</a>
   </nav> 
   <nav>
-    {/* <header className="footer-title">The Master</header>  */}
+    <header className="footer-title">Community</header> 
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact us</a>
     <a className="link link-hover">Career</a>
     <a className="link link-hover">Blog</a>
   </nav> 
   <nav>
-    {/* <header className="footer-title">Legal</header>  */}
+    <header className="footer-title">Legal</header> 
     <a className="link link-hover">Terms of use</a>
     <a className="link link-hover">Privacy policy</a>
     <a className="link link-hover">Cookie policy</a>
