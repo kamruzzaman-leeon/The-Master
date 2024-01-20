@@ -4,6 +4,7 @@ import FeedBack from "../FeedBack/FeedBack";
 import JoinTeacher from "../JoinTeacher/JoinTeacher";
 import Partners from "../Partners/Partners";
 import { Helmet } from "react-helmet";
+import TopCourses from "../TopCourses/TopCourses";
 
 
 const Home = () => {
@@ -17,8 +18,9 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Partners></Partners>
-            <FeedBack></FeedBack>
+            <TopCourses></TopCourses>
             <CountDown></CountDown>
+            <FeedBack></FeedBack>
             <JoinTeacher></JoinTeacher>
         </div>
     );
