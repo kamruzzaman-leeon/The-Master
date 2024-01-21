@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import logo from '../../../assets/logo.png'
 const Navbar = () => {
-    const user =true;
+    const {user} = {}
     const navoptions=<>
       <li className=""><Link to="/">Home</Link></li>
-      <li className=""><Link to="/">All Classes</Link></li>
-      <li className=""><Link to="/">Teach On <span className="font-serif font-semibold text-blue-600">The Master!</span></Link></li>  
+      <li className=""><Link to="/allClasses">All Classes</Link></li>
+      <li className=""><Link to="/teachOn">Teach On <span className="font-serif font-semibold text-blue-600">The Master!</span></Link></li>  
       {
         user?<>
         <div className="dropdown dropdown-end">
@@ -25,7 +25,7 @@ const Navbar = () => {
         <li><Link>Logout</Link></li>
       </ul>
     </div>
-        </>:<li className=""><Link to="/">Sign In</Link></li>  
+        </>:<li className=""><Link to="/signin">Sign In</Link></li>  
       }
       
 

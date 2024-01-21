@@ -6,7 +6,7 @@ const CourseCard = () => {
 
     }
     return (
-        <div className="my-5 card w-auto shadow-xl rounded-none">
+        <div className="my-7 card w-auto shadow-md rounded-none">
         <figure >
           <img src={image} alt={'title'} />
         </figure>
