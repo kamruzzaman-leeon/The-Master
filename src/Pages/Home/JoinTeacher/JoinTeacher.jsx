@@ -2,7 +2,7 @@ import teacher from '../../../assets/Home/Teacher/teacher.json'
 import Lottie from 'lottie-react';
 const JoinTeacher = () => {
     return (
-        <div className="flex flex-col px-5 md:flex-row pb-5 my-20">
+        <div className="flex flex-col bg-slate-50 px-5 md:flex-row pb-5 my-20">
             <div className="max-w-screen-sm">
           <Lottie animationData={teacher} loop={true} />
           </div>
