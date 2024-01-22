@@ -1,7 +1,32 @@
 import { Link, Outlet } from "react-router-dom";
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/logo.png';
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 const Navbar = () => {
-    const {user} = {}
+    const {user,logOut} = useAuth();
+    const handleLogOut = () => {
+      logOut()
+        .then(() => {
+          Swal.fire({
+            title: "Successfully Logout!",
+            showClass: {
+                popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+            },
+            hideClass: {
+                popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+            }
+        });
+        })
+        .catch(error => console.log(error))
+    }
     const navoptions=<>
       <li className=""><Link to="/">Home</Link></li>
       <li className=""><Link to="/allClasses">All Classes</Link></li>
@@ -22,7 +47,7 @@ const Navbar = () => {
           
         </li>
         <li><Link>Dashboard</Link></li>
-        <li><Link>Logout</Link></li>
+        <li onClick={handleLogOut}><Link>Logout</Link></li>
       </ul>
     </div>
         </>:<li className=""><Link to="/signin">Sign In</Link></li>  

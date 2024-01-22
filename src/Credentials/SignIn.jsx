@@ -6,8 +6,10 @@ import Lottie from 'lottie-react';
 import Login from '../assets/Login/login.json'
 import { useEffect, useRef, useState } from 'react';
 import Swal from 'sweetalert2';
+import useAuth from '../hooks/useAuth';
+
 const SignIn = () => {
-    //     const { signIn, loading } = useAuth();
+        const { signIn, loading } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -22,7 +24,7 @@ const SignIn = () => {
                 const user = result.user;
                 console.log(user)
                 Swal.fire({
-                    title: "Successfully Login!",
+                    title: "Successfully Sign In!",
                     showClass: {
                         popup: `
                       animate__animated
@@ -68,7 +70,7 @@ const SignIn = () => {
                 <div className="flex-1 flex flex-col content-center justify-center p-5">
 
                     <div className='mx-auto w-full md:max-w-screen-sm shadow-md'>
-                        <h2 className="text-5xl text-center  font-extrabold text-blue-600 my-5">Login now!</h2>
+                        <h2 className="text-5xl text-center  font-extrabold text-blue-600 my-5">Sign In Now!</h2>
                         <form onSubmit={handlelogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -93,10 +95,10 @@ const SignIn = () => {
                                 <button className='btn btn-outline btn-sm mt-2'>Validate</button>
                             </div>
                             <div className="form-control mt-6">
-                                <button disabled={disabled} className="btn btn-primary">Login</button>
+                                <button disabled={disabled} className="btn btn-primary">signin</button>
                             </div>
                             <p className='text-center'><small>New Here?</small><small className='text-blue-600'> <Link to="/signup">Sign Up</Link></small></p>
-                            <div className="divider">Login With</div>
+                            <div className="divider">Sign In With</div>
                             <SocialLogin></SocialLogin>
                         </form>
                     </div>
