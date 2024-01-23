@@ -2,12 +2,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import CourseCard from '../../../components/CourseCard/CourseCard';
+import useClasses from '../../../hooks/useClasses';
 
 const TopCourses = () => {
+  const [classes]=useClasses();
+  classes.sort((a,b)=>parseInt(a.enrolment, 10)- parseInt(b.age,10))
     return (
         <div className='mx-5 my-10'>
-            <h2 className='text-center font-bold text-4xl py-8'>Our Top enrollment courses</h2>
-            <p className='font-bold text-xl mx-5 text-center text-slate-600'>Explore free online courses from the world's top universities and companies.</p>
+            <h2 className='text-center font-bold text-4xl py-5'>Our Top enrollment courses</h2>
+            <p className='font-bold text-xl mx-5 mb-5 text-center text-slate-600'>Explore free online courses from the world&apos;s top universities and companies.</p>
             
                 <Swiper
                     slidesPerView={1}
@@ -21,23 +24,29 @@ const TopCourses = () => {
                           spaceBetween: 20,
                         },
                         768: {
-                          slidesPerView: 4,
+                          slidesPerView: 3,
                           spaceBetween: 40,
                         },
                         1024: {
-                          slidesPerView: 5,
+                          slidesPerView: 4,
                           spaceBetween: 50,
                         },
                       }}
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
-                     <SwiperSlide><CourseCard></CourseCard></SwiperSlide>
+                 
+                   {
+                    classes.map(
+                        classitem=> <SwiperSlide key={classitem._id}><CourseCard  classitems={classitem}></CourseCard></SwiperSlide>
+                        
+                    )
+                    
+                    
+                }
+                 
+                 
+                    
                     
                    
                 </Swiper>

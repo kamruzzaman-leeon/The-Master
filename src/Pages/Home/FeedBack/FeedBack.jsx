@@ -41,7 +41,7 @@ const FeedBack = () => {
     return (
         <div className='my-20'>
             <h2 className='text-center font-bold text-4xl w-10/12 mx-auto py-8'>Why Students Love <span className='text-blue-600'>The Master</span></h2>
-            <p className='font-bold text-xl mx-5 text-center text-slate-600'>Whether it's a first brush on canvas or the last frame in an animation, Skillshare is here to support you on every step of your creative journey.</p>
+            <p className='font-bold text-xl mx-5 text-center text-slate-600'>Whether it's a first brush on canvas or the last frame in an animation, The Master is here to support you on every step of your creative journey.</p>
             <Swiper
                 pagination={{
                 dynamicBullets: true,
