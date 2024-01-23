@@ -58,7 +58,7 @@ const SignUp = () => {
 
     return (
         <>
-        <Helmet>SignIn | The Master</Helmet>
+        <Helmet>SignU;p | The Master</Helmet>
 
         <div className="grid grid-cols-1 md:grid-cols-2  my-20">
 

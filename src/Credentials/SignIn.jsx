@@ -7,17 +7,18 @@ import Login from '../assets/Login/login.json'
 import { useEffect, useRef, useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../hooks/useAuth';
+import { useForm } from 'react-hook-form';
 
 const SignIn = () => {
         const { signIn, loading } = useAuth();
+        const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     console.log('state in the location', location.state)
-    const handlelogin = e => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+    const onSubmit = data => {
+        const email = data.email;
+        const password = data.password;
         console.log(email, password)
         signIn(email, password)
             .then(result => {
@@ -40,8 +41,12 @@ const SignIn = () => {
                     `
                     }
                 });
-                e.target.reset();
+                reset();
                 navigate(from, { replace: true })
+            }).catch(error => {
+                console.log(error)
+
+                Swa
             })
 
     }
@@ -64,25 +69,25 @@ const SignIn = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2  my-20">
 
-                <div className="max-w-screen-sm px-5">
-                    <Lottie animationData={Login} loop={true} />
-                </div>
+                
                 <div className="flex-1 flex flex-col content-center justify-center p-5">
 
                     <div className='mx-auto w-full md:max-w-screen-sm shadow-md'>
                         <h2 className="text-5xl text-center  font-extrabold text-blue-600 my-5">Sign In Now!</h2>
-                        <form onSubmit={handlelogin} className="card-body">
+                        <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" placeholder="email" {...register('email', { required: true })} className="input input-bordered" />
+                            {errors.email?.type === 'required' && <p className='text-red-600'>Email is require</p>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <input type="password" placeholder="password" {...register('password')} className="input input-bordered" />
+                               
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -102,6 +107,9 @@ const SignIn = () => {
                             <SocialLogin></SocialLogin>
                         </form>
                     </div>
+                </div>
+                <div className="max-w-screen-sm px-5">
+                    <Lottie animationData={Login} loop={true} />
                 </div>
             </div>
 
