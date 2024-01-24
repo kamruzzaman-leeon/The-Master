@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({classitems}) => {
-  const {title:courseName, name, image,description,enrolment,price,category} = classitems;
-  
-
-    const handleEnroll = () =>{
-
-    }
+  const {_id,title:courseName, name, image,description,enrolment,price,category} = classitems;
+    
     return (
         <div className="card w-auto shadow-md rounded-none">
         <figure >
@@ -17,11 +14,11 @@ const CourseCard = ({classitems}) => {
         <div className="card-body">
           <h2 className="card-title">{courseName}</h2>
           <p><span>{enrolment}</span> Enrollment </p>
-          <p className='text-sm from-neutral-200 min-h-32'>{description}</p>
+          <p className='text-sm from-neutral-200'>{description}</p>
           <p className=''>{`instructor: ${name}`}</p>
           <div className="card-actions justify-center">
+          <div className='text-center'><Link to={`/classdetails/${_id}`}> <button className="btn btn-outline text-blue-600 hover:btn-primary">Enroll</button></Link></div>
             
-            <button onClick={handleEnroll} className="btn btn-outline text-blue-600 hover:btn-primary">Enroll</button>
           </div>
         </div>
       </div>
