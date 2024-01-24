@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useClasses from '../../hooks/useClasses';
 import Lottie from 'lottie-react';
@@ -34,7 +33,7 @@ const ClassDetails = () => {
                     <p className=''>{`instructor: ${name}`}</p>
                     
                     <div className="card-actions justify-center">
-                        <div className='text-center'><Link to={`/classdetails/${_id}`}> <button className="btn btn-outline text-blue-600 hover:btn-primary">Enroll</button></Link></div>
+                        <div className='text-center'><Link to={`/classdetails/${_id}`}> <button className="btn btn-outline text-blue-600 hover:btn-primary">Pay</button></Link></div>
                     </div>
                 </div>
             </div>

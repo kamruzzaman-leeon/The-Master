@@ -1,7 +1,7 @@
 
-import Lottie from 'lottie-react';
 import CourseCard from '../../components/CourseCard/CourseCard';
-import Loading from '../../assets/Loading/Loading.json'
+import Loading from '../../components/Loading/Loading';
+
 import useClasses from '../../hooks/useClasses';
 
 const AllClasses = () => {
@@ -17,16 +17,7 @@ const AllClasses = () => {
     const [isLoading, classes, refetch] = useClasses();
     // console.log(classes)
     if (isLoading) {
-        return <>
-            {/* <div className='flex justify-center content-center'>
-                <span className="loading loading-spinner loading-lg"></span>
-            </div> */}
-            <div className="max-w-screen-sm">
-                <Lottie animationData={Loading} loop={true} />
-            </div>
-        </>
-
-
+      <Loading></Loading>
     }
     return (
         <div className=' min-h-screen'>

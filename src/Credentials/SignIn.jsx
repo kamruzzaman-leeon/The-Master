@@ -45,8 +45,24 @@ const SignIn = () => {
                 navigate(from, { replace: true })
             }).catch(error => {
                 console.log(error)
-
-                Swa
+                Swal.fire({
+                    title: error,
+                    showClass: {
+                        popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `
+                    },
+                    hideClass: {
+                        popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `
+                    }
+                });
+                
             })
 
     }

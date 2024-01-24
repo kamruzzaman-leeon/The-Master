@@ -3,9 +3,14 @@ import { Pagination } from 'swiper/modules';
 
 import CourseCard from '../../../components/CourseCard/CourseCard';
 import useClasses from '../../../hooks/useClasses';
+import Loading from '../../../components/Loading/Loading';
+
 
 const TopCourses = () => {
-  const [isLoading,classes] = useClasses();
+  const [isLoading, classes] = useClasses();
+  if (isLoading) {
+    return <Loading></Loading>
+  }
   console.log(classes)
   classes.sort((a, b) => parseInt(a.enrolment, 10) - parseInt(b.age, 10))
   return (
