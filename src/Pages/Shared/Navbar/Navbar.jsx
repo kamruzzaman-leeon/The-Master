@@ -46,7 +46,7 @@ const Navbar = () => {
             }
           
         </li>
-        <li><Link>Dashboard</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
         <li onClick={handleLogOut}><Link>Logout</Link></li>
       </ul>
     </div>
@@ -67,8 +67,8 @@ const Navbar = () => {
         </label>
       </div> 
       <div className="flex-1 px-2 mx-2">
-        <img src={logo} className="w-8 mr-2" alt="logo" />
-        <h2 className="font-extrabold text-blue-600 text-3xl ">The Master</h2></div>
+        
+        <Link to='/'><div className="flex flex-row"><img src={logo} className="w-8 mr-2" alt="logo" /><h2 className="font-extrabold text-blue-600 text-3xl ">The Master</h2></div></Link></div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}

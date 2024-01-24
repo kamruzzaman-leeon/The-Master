@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../hooks/useAuth';
 import { useForm } from 'react-hook-form';
+import Loading from '../components/Loading/Loading';
 
 const SignIn = () => {
         const { signIn, loading } = useAuth();
