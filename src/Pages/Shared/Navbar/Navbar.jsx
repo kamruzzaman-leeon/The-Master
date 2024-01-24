@@ -8,21 +8,11 @@ const Navbar = () => {
       logOut()
         .then(() => {
           Swal.fire({
-            title: "Successfully Logout!",
-            showClass: {
-                popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
-            },
-            hideClass: {
-                popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-            }
+            position: "top-end",
+            title: "Successfully Sign Out!",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500
         });
         })
         .catch(error => console.log(error))
@@ -46,7 +36,7 @@ const Navbar = () => {
             }
           
         </li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li><Link to='/dashboard/myprofile'>Dashboard</Link></li>
         <li onClick={handleLogOut}><Link>Logout</Link></li>
       </ul>
     </div>

@@ -1,8 +1,14 @@
-import { FaChalkboardTeacher, FaHome, FaUsers } from "react-icons/fa";
+import { FaChalkboardTeacher, FaHome, FaPlus, FaUser, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { SiGoogleclassroom } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
+import { BiBookReader } from "react-icons/bi";
+
+import useAdmin from "../hooks/useAdmin";
 const Dashboard = () => {
+    const [isAdmin] = useAdmin();
+    // console.log(isAdmin)
+    const isTeacher = true;
     return (
         <>
             <div className="drawer lg:drawer-open">
@@ -18,45 +24,73 @@ const Dashboard = () => {
                     </div>
                     {/* Page content here */}
                     <div className="m-10">
-                    <Outlet></Outlet>
+                        <Outlet></Outlet>
                     </div>
                 </div>
                 <div className="drawer-side lg:visible">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 min-h-full bg-base-200">
                         {/* Sidebar content here */}
-                        <>
-                            <li>
-                                {/* <NavLink to="/dashboard"> */}
-                                <h2 className="text-4xl ">Dashboard</h2>
-                                {/* </NavLink> */}
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/teacherreq">
-                                    <FaChalkboardTeacher></FaChalkboardTeacher>
-                                    Teacher Request</NavLink>
-                            </li>
-                            <li><NavLink to="/dashboard/users">
-                                <FaUsers></FaUsers>
-                                All Users</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/adminallclasses"> <SiGoogleclassroom />All Classes</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/myprofile">
-                                    <CgProfile />My Profile
-                                </NavLink>
-                            </li>
-                            <div className="divider"></div>
-                            {/* shared nav links */}
+
+                        <ul>
+                            {
+                                isAdmin ? (<>
+                                    <li>
+                                        {/* <NavLink to="/dashboard"> */}
+                                        <h2 className="text-4xl ">Dashboard</h2>
+                                        {/* </NavLink> */}
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/teacherreq">
+                                            <FaChalkboardTeacher></FaChalkboardTeacher>
+                                            Teacher Request</NavLink>
+                                    </li>
+                                    <li><NavLink to="/dashboard/users">
+                                        <FaUsers></FaUsers>
+                                        All Users</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/adminallclasses"> <SiGoogleclassroom />All Classes</NavLink>
+                                    </li>
+                                </>
+                                ):                           
+                                isTeacher ?(
+                                    <>
+                                    <li>
+                                        <NavLink to="/dashboard/teacherreq">
+                                            <FaPlus></FaPlus>
+                                            Add Class</NavLink>
+                                    </li>
+                                    <li><NavLink to="/dashboard/users">
+                                        <FaUser></FaUser>
+                                        My Class</NavLink>
+                                    </li>
+                                </>
+                                ):                           
+                                    <li>
+                                    <NavLink to="/dashboard/teacherreq">
+                                            <BiBookReader />
+                                            My enroll class</NavLink>
+                                    </li>
+                               
+                            }
+
+                        </ul>
+                        <div className="divider"></div>
+                        {/* shared nav links */}
+                        <ul>
                             <li>
                                 <NavLink to='/'>
                                     <FaHome></FaHome>
                                     Home
                                 </NavLink>
                             </li>
-                        </>
+                            <li>
+                                <NavLink to="/dashboard/myprofile">
+                                    <CgProfile />My Profile
+                                </NavLink>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
             </div>

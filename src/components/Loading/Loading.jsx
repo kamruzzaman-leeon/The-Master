@@ -3,8 +3,10 @@ import loading from '../../assets/Loading/Loading.json'
 
 const Loading = () => {
     return (
-        <div className="w-32 flex justify-center content-center">
+        <div className=''>
+            <div className="w-32 mx-auto">
             <Lottie animationData={loading} loop={true} />
+        </div>
         </div>
     );
 };

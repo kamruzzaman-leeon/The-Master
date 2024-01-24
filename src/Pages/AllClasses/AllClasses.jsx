@@ -14,10 +14,10 @@ const AllClasses = () => {
     //         return res.data;
     //     }
     // })
-    const [isLoading, classes, refetch] = useClasses();
+    const [isPending, classes, refetch] = useClasses();
     // console.log(classes)
-    if (isLoading) {
-      <Loading></Loading>
+    if (isPending) {
+    return <Loading></Loading>
     }
     return (
         <div className=' min-h-screen'>

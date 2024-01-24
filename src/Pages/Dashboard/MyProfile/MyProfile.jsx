@@ -1,12 +1,30 @@
+import { useQuery } from '@tanstack/react-query';
 import Loading from '../../../components/Loading/Loading';
 import useAuth from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
+
 
 const MyProfile = () => {
-    const { user,loading } = useAuth();
+    const { user, loading } = useAuth();
+    const axiosSecure = useAxiosSecure();
+
+
+    const { data } = useQuery({
+        queryKey: ['userdb'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/user/${user.email}`);
+            console.log(res.data)
+            return res.data;
+        }
+    })
+    // const [users]= useUsers();
+    // const isAdmin = useAdmin();
+    // console.log(user)
+    // const isTeacher = false;
     if (loading) {
-        <Loading></Loading>
-      }
-    console.log(user)
+        return <Loading></Loading>
+    }
+
     return (
         <div className=' min-h-screen'>
             <h2 className='text-4xl text-center'>teach on<span className='text-blue-600'>The Master!</span></h2>
@@ -24,18 +42,19 @@ const MyProfile = () => {
                 </div>
                 <div>
                     <span className="label-text">Email</span>
-
                     <p>{user?.email}</p>
                 </div>
-                {/* <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Role</span>
-                    </label>
-                    <p>{role}</p>                  
-                </div> */}
+                <div>
+                    <span className="label-text">Phone</span>
+                    <p>{user?.phoneNumber || 'null'}</p>
+                </div>
+                <div>
+                    <span className="label-text">Role</span>
+                    <p>{data?.role || 'student'}</p>
+                </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 

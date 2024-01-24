@@ -12,6 +12,8 @@ import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import TeacherReq from '../Pages/Dashboard/TeacherReq/TeacherReq';
 import AdminAllClasses from "../Pages/Dashboard/AdminAllClasses/AdminAllClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -43,11 +45,11 @@ export const router = createBrowserRouter([
     children:[
       {
         path:'users',
-        element:<AllUsers></AllUsers>,
+        element:<AdminRoute><AllUsers></AllUsers></AdminRoute>,
       },
       {
         path:'myprofile',
-        element:<MyProfile></MyProfile>
+        element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>
       },
       {
         path:'teacherreq',
