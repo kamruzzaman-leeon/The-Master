@@ -13,7 +13,7 @@ const MyProfile = () => {
         queryKey: ['userdb'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/user/${user.email}`);
-            console.log(res.data)
+            // console.log(res.data)
             return res.data;
         }
     })
