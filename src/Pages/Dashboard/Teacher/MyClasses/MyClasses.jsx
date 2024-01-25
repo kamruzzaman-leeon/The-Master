@@ -19,7 +19,7 @@ const MyClasses = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log(myclasses);
+    // console.log(myclasses);
     return (
         <div>
             <div className='flex justify-evenly'>
