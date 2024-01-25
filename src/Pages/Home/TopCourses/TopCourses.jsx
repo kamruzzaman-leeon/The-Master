@@ -7,9 +7,9 @@ import Loading from '../../../components/Loading/Loading';
 
 
 const TopCourses = () => {
-  const { isPending, classes, refetch } = useClasses();
+  const { isLoading, classes, refetch } = useClasses();
   // console.log('topcourse', classes)
-  if (isPending) {
+  if (isLoading) {
     return <Loading></Loading>
   }
   const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
@@ -21,6 +21,7 @@ const TopCourses = () => {
       <p className='font-bold text-xl mx-5 mb-5 text-center text-slate-600'>Explore free online courses from the world&apos;s top universities and companies.</p>
 
       <Swiper
+      
         slidesPerView={1}
         spaceBetween={30}
         pagination={{
@@ -36,7 +37,7 @@ const TopCourses = () => {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 50,
           },
         }}
@@ -49,14 +50,8 @@ const TopCourses = () => {
             classitem => <SwiperSlide key={classitem._id}><CourseCard classitems={classitem}></CourseCard></SwiperSlide>
           )
         }
-
-
-
-
-
       </Swiper>
-
-    </div>
+      </div>
 
   );
 };
