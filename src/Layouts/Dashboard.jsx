@@ -5,10 +5,11 @@ import { CgProfile } from "react-icons/cg";
 import { BiBookReader } from "react-icons/bi";
 
 import useAdmin from "../hooks/useAdmin";
+import useTeacher from "../hooks/useTeacher";
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
     // console.log(isAdmin)
-    const isTeacher = true;
+    const [isTeacher] = useTeacher();
     return (
         <>
             <div className="drawer lg:drawer-open">
@@ -54,21 +55,21 @@ const Dashboard = () => {
                                     </li>
                                 </>
                                 ):                           
-                                isTeacher ?(
+                                isTeacher? (
                                     <>
                                     <li>
-                                        <NavLink to="/dashboard/teacherreq">
+                                        <NavLink to="/dashboard/teacher/addclass">
                                             <FaPlus></FaPlus>
                                             Add Class</NavLink>
                                     </li>
-                                    <li><NavLink to="/dashboard/users">
+                                    <li><NavLink to="/dashboard/teacher/myclass">
                                         <FaUser></FaUser>
                                         My Class</NavLink>
                                     </li>
                                 </>
                                 ):                           
                                     <li>
-                                    <NavLink to="/dashboard/teacherreq">
+                                    <NavLink to="/dashboard/student/myenrollclass">
                                             <BiBookReader />
                                             My enroll class</NavLink>
                                     </li>

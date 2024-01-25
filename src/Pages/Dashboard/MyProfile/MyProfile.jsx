@@ -27,7 +27,7 @@ const MyProfile = () => {
 
     return (
         <div className=' min-h-screen'>
-            <h2 className='text-4xl text-center'>teach on<span className='text-blue-600'>The Master!</span></h2>
+            <h2 className='text-4xl text-center'>Welcome to <span className='text-blue-600'>The Master!</span></h2>
             <div className='text-center mx-auto p-5 md:max-w-screen-md shadow-md'>
 
 

@@ -11,7 +11,7 @@ const TopCourses = () => {
   if (isLoading) {
     return <Loading></Loading>
   }
-  console.log(classes)
+  // console.log(classes)
   classes.sort((a, b) => parseInt(a.enrolment, 10) - parseInt(b.age, 10))
   return (
     <div className='mx-5 my-10'>

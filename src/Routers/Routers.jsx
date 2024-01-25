@@ -7,13 +7,16 @@ import Dashboard from "../Layouts/Dashboard";
 import SignIn from "../Credentials/SignIn";
 import SignUp from "../Credentials/SignUp";
 import ClassDetails from "../Pages/ClassDetails/ClassDetails";
-import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
-import TeacherReq from '../Pages/Dashboard/TeacherReq/TeacherReq';
-import AdminAllClasses from "../Pages/Dashboard/AdminAllClasses/AdminAllClasses";
+import TeacherReq from '../Pages/Dashboard/Admin/TeacherReq/TeacherReq';
+import AdminAllClasses from "../Pages/Dashboard/Admin/AdminAllClasses/AdminAllClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
+import AddClass from "../Pages/Dashboard/Teacher/AddClass/AddClass";
+import MyClasses from "../Pages/Dashboard/Teacher/MyClasses/MyClasses";
+import TeacherRoute from "./TeacherRoute";
 
 
 export const router = createBrowserRouter([
@@ -31,7 +34,7 @@ export const router = createBrowserRouter([
       }, 
       {
         path:'/classdetails/:id',
-        element:<ClassDetails></ClassDetails>
+        element:<PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>
       },
       {
          path: "/teachOn",
@@ -53,12 +56,21 @@ export const router = createBrowserRouter([
       },
       {
         path:'teacherreq',
-        element:<TeacherReq></TeacherReq>
+        element:<AdminRoute><TeacherReq></TeacherReq></AdminRoute>
       },
       {
         path:'adminallclasses',
         element:<AdminAllClasses></AdminAllClasses>,
+      },
+      {
+        path:'teacher/addclass',
+        element:<TeacherRoute><AddClass></AddClass></TeacherRoute>
+      },
+      {
+        path:'teacher/myclass',
+        element:<TeacherRoute><MyClasses></MyClasses></TeacherRoute>
       }
+    
     ]
   },
   {
