@@ -14,7 +14,7 @@ const AllClasses = () => {
     //         return res.data;
     //     }
     // })
-    const [isPending, classes, refetch] = useClasses();
+    const {isPending, classes, refetch} = useClasses();
     console.log(classes)
     const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
     if (isPending) {

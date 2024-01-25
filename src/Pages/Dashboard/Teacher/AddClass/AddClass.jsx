@@ -48,7 +48,7 @@ const AddClass = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate('/teacher/myclass');
+                navigate('/dashboard/teacher/myclass');
             }
         }
         // console.log('with image url', res.data);

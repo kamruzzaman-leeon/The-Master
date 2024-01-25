@@ -7,7 +7,7 @@ import Loading from '../../../components/Loading/Loading';
 
 
 const TopCourses = () => {
-  const [isLoading, classes] = useClasses();
+  const {isLoading, classes} = useClasses();
   const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
   if (isLoading) {
     return <Loading></Loading>

@@ -1,4 +1,3 @@
-import React from 'react';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
@@ -16,7 +15,7 @@ const TeacherReq = () => {
 
     const handleTeacher = async (teacher, status) => {
         const { _id,email } = teacher
-        axiosSecure.patch(`/users/teacher/${_id}`, { status,email })
+        axiosSecure.patch(`/users/teacher/${_id}`, { status, email })
             .then(res => {
                 // console.log(res.data)
                 if (res.data.modifiedCount > 0) {

@@ -10,7 +10,7 @@ const useClasses = () => {
             return res.data;
         }
     })
-    return [isPending, classes, refetch]
+    return {isPending, classes, refetch}
 };
 
 export default useClasses;

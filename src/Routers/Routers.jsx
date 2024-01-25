@@ -18,6 +18,7 @@ import AddClass from "../Pages/Dashboard/Teacher/AddClass/AddClass";
 import MyClasses from "../Pages/Dashboard/Teacher/MyClasses/MyClasses";
 import TeacherRoute from "./TeacherRoute";
 import MyClassDetails from "../Pages/Dashboard/Teacher/MyClassDetails/MyClassDetails";
+import Progress from "../Pages/Dashboard/Progress/Progress";
 
 
 export const router = createBrowserRouter([
@@ -65,15 +66,19 @@ export const router = createBrowserRouter([
       },
       {
         path:'teacher/addclass',
-        element:<TeacherRoute><AddClass></AddClass></TeacherRoute>
+        element:<TeacherRoute><AddClass></AddClass></TeacherRoute>,
       },
       {
         path:'teacher/myclass',
-        element:<TeacherRoute><MyClasses></MyClasses></TeacherRoute>
+        element:<TeacherRoute><MyClasses></MyClasses></TeacherRoute>,
       },
       {
         path:'teacher/myclassdetails/:id',
-        element:<MyClassDetails></MyClassDetails>
+        element:<MyClassDetails></MyClassDetails>,
+      },
+      {
+        path:'progress/:id',
+        element: <Progress></Progress>
       }
     
     ]
