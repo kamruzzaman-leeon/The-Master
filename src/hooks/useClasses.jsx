@@ -3,14 +3,15 @@ import useAxiosPublic from './useAxiosPublic';
 
 const useClasses = () => {
     const axiosPublic = useAxiosPublic()
-    const { isPending, data: classes = [], refetch } = useQuery({
+    const { isPending, isLoading, data: classes = [], refetch } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
             const res = await axiosPublic.get('/classes');
             return res.data;
         }
     })
-    return {isPending, classes, refetch}
+    // console.log(classes)
+    return { isPending, isLoading, classes, refetch }
 };
 
 export default useClasses;

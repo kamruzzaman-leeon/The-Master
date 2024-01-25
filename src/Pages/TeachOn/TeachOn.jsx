@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const TeachOn = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure()
-    const [isLoading, classes] = useClasses();
+    const {isLoading, classes} = useClasses();
     // console.log('teachon: ', classes)
     if (isLoading) {
         <Loading></Loading>

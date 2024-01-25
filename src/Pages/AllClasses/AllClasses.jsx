@@ -22,7 +22,6 @@ const AllClasses = () => {
     }
     return (
         <div className=' min-h-screen'>
-
             <div className='flex justify-evenly'>
                 <h2 className="text-3xl">All Classes</h2>
                 <h2 className="text-3xl">Total Class: {approvedClasses.length}</h2>

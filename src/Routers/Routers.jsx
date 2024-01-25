@@ -33,66 +33,66 @@ export const router = createBrowserRouter([
       {
         path: "/allClasses",
         element: <AllClasses></AllClasses>
-      }, 
-      {
-        path:'/classdetails/:id',
-        element:<PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>
       },
       {
-         path: "/teachOn",
-         element: <TeachOn></TeachOn>
+        path: '/classdetails/:id',
+        element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>
+      },
+      {
+        path: "/teachOn",
+        element: <PrivateRoute><TeachOn></TeachOn></PrivateRoute>
       }
     ]
   },
   {
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
       {
-        path:'users',
-        element:<AdminRoute><AllUsers></AllUsers></AdminRoute>,
+        path: 'users',
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
       },
       {
-        path:'myprofile',
-        element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>
+        path: 'myprofile',
+        element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
       },
       {
-        path:'teacherreq',
-        element:<AdminRoute><TeacherReq></TeacherReq></AdminRoute>
+        path: 'teacherreq',
+        element: <AdminRoute><TeacherReq></TeacherReq></AdminRoute>
       },
       {
-        path:'adminallclasses',
-        element:<AdminAllClasses></AdminAllClasses>,
+        path: 'adminallclasses',
+        element: <AdminAllClasses></AdminAllClasses>,
       },
       {
-        path:'teacher/addclass',
-        element:<TeacherRoute><AddClass></AddClass></TeacherRoute>,
+        path: 'teacher/addclass',
+        element: <TeacherRoute><AddClass></AddClass></TeacherRoute>,
       },
       {
-        path:'teacher/myclass',
-        element:<TeacherRoute><MyClasses></MyClasses></TeacherRoute>,
+        path: 'teacher/myclass',
+        element: <TeacherRoute><MyClasses></MyClasses></TeacherRoute>,
       },
       {
-        path:'teacher/myclassdetails/:id',
-        element:<MyClassDetails></MyClassDetails>,
+        path: 'teacher/myclassdetails/:id',
+        element: <TeacherRoute><MyClassDetails></MyClassDetails></TeacherRoute>,
       },
       {
-        path:'progress/:id',
+        path: 'progress/:id',
         element: <Progress></Progress>
       }
-    
+
     ]
   },
   {
-    path:"/signin",
+    path: "/signin",
     element: <SignIn></SignIn>
   },
   {
-    path:"/signup",
-    element:<SignUp></SignUp>
+    path: "/signup",
+    element: <SignUp></SignUp>
   },
   {
-    path:"*",
-    element:<ErrorPage></ErrorPage>
+    path: "*",
+    element: <ErrorPage></ErrorPage>
   }
 ]);

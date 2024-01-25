@@ -38,7 +38,7 @@ const AddClass = () => {
             }
             // console.log(classitem)
 
-            const classRes = await axiosSecure.post('teacher/addclass', classitem);
+            const classRes = await axiosSecure.post('/teacher/addclass', classitem);
             if (classRes.data.insertedId) {
                 reset();
                 Swal.fire({

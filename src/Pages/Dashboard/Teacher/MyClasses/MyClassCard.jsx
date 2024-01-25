@@ -46,7 +46,7 @@ const MyClassCard = ({ classitem, refetch }) => {
             price: parseFloat(data.price),
             image: imageUrl,
             description: data.description,
-            status: 'pending',
+            status: 'approve',
         };
     
         console.log(classupdateitem);            
@@ -132,7 +132,8 @@ const MyClassCard = ({ classitem, refetch }) => {
                                     disabled={true}
                                 >
                                     See details
-                                </button>
+                                </button><br />
+                                {/* <small>Please wait for admin review</small> */}
                             </div>
                         )}
 

@@ -7,11 +7,12 @@ import Loading from '../../../components/Loading/Loading';
 
 
 const TopCourses = () => {
-  const {isLoading, classes} = useClasses();
-  const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
-  if (isLoading) {
+  const { isPending, classes, refetch } = useClasses();
+  // console.log('topcourse', classes)
+  if (isPending) {
     return <Loading></Loading>
   }
+  const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
   // console.log(classes)
   approvedClasses.sort((a, b) => parseInt(a.enrolment, 10) - parseInt(b.age, 10))
   return (
