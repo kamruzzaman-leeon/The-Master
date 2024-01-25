@@ -16,15 +16,15 @@ const SignIn = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log('state in the location', location.state)
+    // console.log('state in the location', location.state)
     const onSubmit = data => {
         const email = data.email;
         const password = data.password;
-        console.log(email, password)
+        // console.log(email, password)
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                // console.log(user)
                 Swal.fire({
                     position: "top-end",
                     icon: "success",

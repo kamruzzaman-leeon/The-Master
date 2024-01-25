@@ -9,7 +9,7 @@ const TeacherReq = () => {
         queryKey: ['teacher'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/teachers`);
-            console.log(res.data);
+            // console.log(res.data);
             return res.data;
         }
     })
@@ -18,7 +18,7 @@ const TeacherReq = () => {
         const { _id,email } = teacher
         axiosSecure.patch(`/users/teacher/${_id}`, { status,email })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     refetch()
                     Swal.fire({
@@ -41,8 +41,8 @@ const TeacherReq = () => {
         <div className='min-h-screen'>
 
             <div className='flex justify-evenly'>
-                <h2 className="text-3xl">All Teacher req</h2>
-                <h2 className="text-3xl">Total Teacher Request: {teachers.length}</h2>
+                <h2 className="text-3xl">Teacher List</h2>
+                <h2 className="text-3xl">Total Teacher: {teachers.length}</h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">

@@ -15,20 +15,21 @@ const AllClasses = () => {
     //     }
     // })
     const [isPending, classes, refetch] = useClasses();
-    // console.log(classes)
+    console.log(classes)
+    const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
     if (isPending) {
-    return <Loading></Loading>
+        return <Loading></Loading>
     }
     return (
         <div className=' min-h-screen'>
 
             <div className='flex justify-evenly'>
                 <h2 className="text-3xl">All Classes</h2>
-                <h2 className="text-3xl">Total Class: {classes.length}</h2>
+                <h2 className="text-3xl">Total Class: {approvedClasses.length}</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5 p-5'>
                 {
-                    classes.map(
+                    approvedClasses.map(
                         classitem => <CourseCard key={classitem._id} classitems={classitem}></CourseCard>
 
                     )

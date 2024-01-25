@@ -84,11 +84,19 @@ const TeachOn = () => {
                         </label>
                         <select {...register('category',{required:true})}>
                         {/* <option defaultValue="">Select a category</option> */}
-                            {classes.map(item => (
+                            <option value={'Digital Marketing'}>Digital Marketing</option>
+                            <option value={'Graphic Design'}>Graphic Design</option>
+                            <option value={'Web Development'}>Web Development</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Blockchain and Cryptocurrency">Blockchain and Cryptocurrency</option>
+                            <option value="Cloud Computing">Cloud Computing</option>
+                            
+                            {/* {classes.map(item => (
                                 <option key={item._id} value={item.category}>
                                     {item.category}
                                 </option>
-                            ))}
+                            ))} */}
                         </select>
                     </div>
 

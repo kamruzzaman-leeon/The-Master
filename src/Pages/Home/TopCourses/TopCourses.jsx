@@ -8,11 +8,12 @@ import Loading from '../../../components/Loading/Loading';
 
 const TopCourses = () => {
   const [isLoading, classes] = useClasses();
+  const approvedClasses = classes.filter(classitem => classitem.status === 'approve');
   if (isLoading) {
     return <Loading></Loading>
   }
   // console.log(classes)
-  classes.sort((a, b) => parseInt(a.enrolment, 10) - parseInt(b.age, 10))
+  approvedClasses.sort((a, b) => parseInt(a.enrolment, 10) - parseInt(b.age, 10))
   return (
     <div className='mx-5 my-10'>
       <h2 className='text-center font-bold text-4xl py-5'>Our Top enrollment courses</h2>
@@ -43,7 +44,7 @@ const TopCourses = () => {
       >
 
         {
-          classes.map(
+          approvedClasses.map(
             classitem => <SwiperSlide key={classitem._id}><CourseCard classitems={classitem}></CourseCard></SwiperSlide>
           )
         }
